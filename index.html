@@ -3,846 +3,1419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soumya's Professional Portfolio</title>
+    <title>Soumya Shukla — Business Analyst</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <style>
-        /* Global Styles */
         :root {
-            --primary-color: #0c2034;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #0c2034;
-            --text-color: #333;
-            --section-padding: 60px 0;
+            --ink: #e2e8f0;
+            --cream: #0b0f14;
+            --warm-white: #111820;
+            --slate: #94a3b8;
+            --gold: #38bdf8;
+            --gold-light: #0f2030;
+            --rust: #7dd3fc;
+            --muted: #526070;
+            --border: #1e2d3d;
+            --card-bg: #111820;
+            --accent2: #06b6d4;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #f9f9f9;
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            line-height: 1.7;
+            overflow-x: hidden;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        section {
-            padding: var(--section-padding);
-        }
-        
-        h1, h2, h3, h4 {
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-        
-        p {
-            margin-bottom: 15px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
+
+        /* ─── NAV ─── */
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 18px 0;
+            background: rgba(18, 16, 14, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
             transition: all 0.3s ease;
         }
-        
-        .nav-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d') center/cover;
-            height: 100vh;
-            color: white;
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .hero-content {
-            max-width: 800px;
+
+        .nav-inner {
+            max-width: 1160px;
             margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: white;
-        }
-        
-        .hero p {
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
             font-size: 20px;
-            margin-bottom: 30px;
+            color: var(--ink);
+            text-decoration: none;
+            letter-spacing: -0.3px;
         }
-        
-        /* About Section */
-        .about {
-            background-color: white;
-        }
-        
-        /* Experience Section */
-        .experience {
-            background-color: var(--light-color);
-        }
-        
-        .job {
-            background-color: white;
-            border-radius: 5px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .job:hover {
-            transform: translateY(-5px);
-        }
-        
-        .job-title {
+
+        .nav-links {
+            list-style: none;
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
+            gap: 36px;
         }
-        
-        .job-company {
-            font-weight: bold;
-            color: var(--secondary-color);
+
+        .nav-links a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s;
         }
-        
-        .job-duration {
-            color: #777;
-        }
-        
-        .job ul {
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-        
-        .job li {
-            margin-bottom: 8px;
-        }
-        
-        /* Skills Section */
-        .skills {
-            background-color: white;
-        }
-        
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .skill-category {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .skill-item {
-            background-color: var(--light-color);
-            padding: 10px 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .skill-item:hover {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-        
-        /* Education Section */
-        .education {
-            background-color: var(--light-color);
-        }
-        
-        .education-item {
-            background-color: white;
-            border-radius: 5px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .education-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        
-        .education-degree {
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-        
-        .education-date {
-            color: #777;
-        }
-        
-        /* Projects Section */
-        .projects {
-            background-color: var(--light-color);
-            overflow: hidden;
-        }
-        
-        .swiper {
-            width: 100%;
-            padding-top: 20px;
-            padding-bottom: 50px;
-        }
-        
-        .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 300px;
-            height: 400px;
-            border-radius: 10px;
-        }
-        
-        .project-card {
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+
+        .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            transition: all 0.3s ease;
+            justify-content: center;
+            align-items: center;
+            padding: 140px 40px 80px;
+            position: relative;
             overflow: hidden;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .project-img {
-            width: 100%;
-            height: 150px;
-            border-radius: 5px;
-            overflow: none;
-            margin-bottom: 11px;
-        }
-        
-        .project-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            transition: transform 0.5s ease;
-        }
-        
-        .project-card:hover .project-img img {
-            transform: scale(1.1);
-        }
-        
-        .project-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-        
-        .project-category {
-            font-size: 14px;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-        
-        .project-desc {
-            /* font-size: 14px; */
-            flex-grow: 1;
-            /* overflow: scroll; */
-        }
-        
-        .project-links {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 15px;
-        }
-        
-        .project-links a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .project-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .swiper-pagination-bullet-active {
-            background-color: var(--secondary-color);
-        }
-        
-        .swiper-button-next, .swiper-button-prev {
-            color: var(--secondary-color);
-        }
-        
-        /* Certifications Section */
-        .certifications {
-            background-color: white;
-        }
-        
-        .cert-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .cert-item {
-            background-color: var(--light-color);
-            padding: 15px;
-            border-radius: 5px;
-            flex: 1;
-            min-width: 250px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .cert-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .cert-item i {
-            color: var(--secondary-color);
-            margin-right: 10px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 30px 0;
             text-align: center;
         }
-        
-        .social-links {
-            margin: 20px 0;
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 10%; left: 50%;
+            transform: translateX(-50%);
+            width: 800px; height: 400px;
+            background: radial-gradient(ellipse, rgba(56,189,248,0.07) 0%, transparent 70%);
+            pointer-events: none;
         }
+
+        /* Decorative corner lines */
+        .hero-corner {
+            position: absolute;
+            width: 60px; height: 60px;
+            opacity: 0.2;
+        }
+        .hero-corner.tl { top: 100px; left: 40px; border-top: 1px solid var(--gold); border-left: 1px solid var(--gold); }
+        .hero-corner.tr { top: 100px; right: 40px; border-top: 1px solid var(--gold); border-right: 1px solid var(--gold); }
+        .hero-corner.bl { bottom: 60px; left: 40px; border-bottom: 1px solid var(--gold); border-left: 1px solid var(--gold); }
+        .hero-corner.br { bottom: 60px; right: 40px; border-bottom: 1px solid var(--gold); border-right: 1px solid var(--gold); }
+
+        .hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        .hero-text { position: relative; z-index: 1; width: 100%; }
+
+        .hero-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            min-height: 24px;
+            animation: fadeUp 0.7s ease both, pulse 2.5s ease-in-out 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero-eyebrow::before,
+        .hero-eyebrow::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+            opacity: 0.5;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.1;
+            letter-spacing: -1px;
+            color: #f0f4f8;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .hero-title-line {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 28px auto;
+        }
+
+        .hero-typed {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 28px;
+            min-height: 32px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: var(--slate);
+            max-width: 480px;
+            margin: 0 auto 44px;
+            line-height: 1.8;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: #0b0f14;
+            padding: 14px 32px;
+            border-radius: 1px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            background: #7dd3fc;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(56,189,248,0.25);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(240,236,228,0.2);
+            color: var(--ink);
+            padding: 14px 32px;
+            border-radius: 1px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.25s ease;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .hero-social {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-bottom: 72px;
+        }
+
+        .hero-social a {
+            color: var(--muted);
+            font-size: 18px;
+            transition: color 0.2s;
+        }
+
+        .hero-social a:hover { color: var(--gold); }
+
+        /* Stats row */
+        .hero-stats-block {
+            display: flex;
+            gap: 0;
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        .stat-big {
+            flex: 1;
+            background: var(--warm-white);
+            padding: 28px 20px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+            transition: background 0.2s;
+        }
+
+        .stat-big:last-child { border-right: none; }
+        .stat-big:hover { background: #211e1a; }
+
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--gold);
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+
+        .stat-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+
+        /* ─── SECTIONS ─── */
+        .section {
+            padding: 100px 40px;
+        }
+
+        .section-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            letter-spacing: -1px;
+            color: var(--ink);
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ─── ABOUT ─── */
+        .about-section { background: var(--warm-white); }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 1.85;
+            color: var(--slate);
+            max-width: 820px;
+        }
+
+        .about-text p { margin-bottom: 20px; }
+
         
-        .social-links a {
-            color: white;
+
+        /* ─── EXPERIENCE ─── */
+        .experience-section { background: var(--cream); }
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 8px; bottom: 0;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            padding-left: 48px;
+            padding-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-item:last-child { padding-bottom: 0; }
+
+        .timeline-dot {
+            position: absolute;
+            left: -5px;
+            top: 8px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: var(--gold);
+            border: 2px solid var(--cream);
+        }
+
+        .timeline-meta {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .timeline-company {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--ink);
+        }
+
+        .timeline-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--muted);
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-role {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--rust);
+            letter-spacing: 0.3px;
+            margin-bottom: 14px;
+        }
+
+        .timeline-desc {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
+        .timeline-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .timeline-list li {
+            font-size: 14px;
+            color: var(--slate);
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .timeline-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 12px;
+        }
+
+        /* ─── PROJECTS ─── */
+        .projects-section { background: var(--warm-white); }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 28px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover { 
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(15,14,12,0.1);
+        }
+
+        .project-card:hover::before { transform: scaleX(1); }
+
+        .project-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+        }
+
+        .project-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            color: var(--ink);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .project-desc {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .project-metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .metric {
+            font-size: 12px;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .metric::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+
+        /* ─── SKILLS ─── */
+        .skills-section { background: #070c12; }
+        .skills-section .section-title { color: #e2e8f0; }
+        .skills-section .section-label { color: #38bdf8; }
+        .skills-section .section-line { background: rgba(255,255,255,0.08); }
+        .skills-section .skill-tag { color: rgba(184,176,164,0.8); border-color: rgba(255,255,255,0.08); }
+        .skills-section .skill-tag:hover { color: #e2e8f0; border-color: #38bdf8; background: rgba(56,189,248,0.08); }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .skill-group h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            font-size: 13px;
+            color: rgba(245,240,232,0.75);
+            padding: 10px 14px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 2px;
+            transition: all 0.2s;
+        }
+
+        .skill-tag:hover {
+            color: var(--cream);
+            border-color: var(--gold);
+            background: rgba(56,189,248,0.08);
+        }
+
+        /* ─── EDUCATION ─── */
+        .education-section { background: var(--cream); }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .edu-card {
+            background: var(--warm-white);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 32px;
+        }
+
+        .edu-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gold-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: var(--gold);
+        }
+
+        .edu-degree {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--ink);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .edu-school {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .edu-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--gold);
+        }
+
+        /* ─── CERTIFICATIONS ─── */
+        .certs-section { background: var(--warm-white); }
+
+        .cert-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 28px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--ink);
+            transition: all 0.25s ease;
+        }
+
+        .cert-item:hover {
+            border-color: var(--gold);
+            transform: translateX(4px);
+        }
+
+        .cert-icon {
             font-size: 24px;
-            margin: 0 10px;
+            color: var(--gold);
+            width: 32px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .cert-name {
+            font-size: 15px;
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .cert-arrow {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: #070c12;
+            color: var(--cream);
+            padding: 60px 40px;
+        }
+
+        .footer-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: center;
+        }
+
+        .footer-contact a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-social a {
+            color: rgba(245,240,232,0.5);
+            font-size: 20px;
+            transition: color 0.2s;
+        }
+
+        .footer-social a:hover { color: var(--gold); }
+
+        .footer-copy {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: rgba(245,240,232,0.3);
+            max-width: 1160px;
+            margin: 40px auto 0;
+        }
+
+        /* ─── ANIMATIONS ─── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-text > * {
+            animation: fadeUp 0.7s ease both;
+        }
+
+        .hero-eyebrow { animation-delay: 0.1s; }
+        .hero h1 { animation-delay: 0.2s; }
+        .hero-subtitle { animation-delay: 0.3s; }
+        .hero-actions { animation-delay: 0.4s; }
+        .hero-social { animation-delay: 0.5s; }
+
+        .hero-image-wrap {
+            animation: fadeUp 0.7s 0.3s ease both;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 60px; }
+            .projects-grid { grid-template-columns: 1fr 1fr; }
+            .skills-grid { grid-template-columns: 1fr 1fr; }
+            .education-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links { display: none; }
+            .section { padding: 70px 24px; }
+            .hero { padding: 100px 24px 70px; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr 1fr; }
+            .footer-inner { flex-direction: column; gap: 32px; text-align: center; }
+            .hero-stats-block { grid-template-columns: 1fr 1fr; }
+        }
+        /* ─── CURSOR GLOW ─── */
+        .cursor-glow {
+            position: fixed;
+            width: 300px; height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(56,189,248,0.06) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+        }
+
+        /* ─── SCROLL PROGRESS BAR ─── */
+        .scroll-progress {
+            position: fixed;
+            top: 0; left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #38bdf8, #06b6d4);
+            z-index: 200;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* ─── NAV ACTIVE INDICATOR ─── */
+        .nav-links a.active {
+            color: var(--gold);
+        }
+        .nav-links a.active::after {
+            content: '';
+            display: block;
+            height: 1px;
+            background: var(--gold);
+            margin-top: 2px;
+            animation: slideIn 0.2s ease;
+        }
+        @keyframes slideIn { from { width: 0 } to { width: 100% } }
+
+        /* ─── TYPING CURSOR ─── */
+        .typed-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background: var(--gold);
+            margin-left: 3px;
+            vertical-align: middle;
+            animation: blink 0.9s step-end infinite;
+        }
+        @keyframes blink { 0%,100% { opacity: 1 } 50% { opacity: 0 } }
+
+        /* ─── PROJECT CARD TILT ─── */
+        .project-card {
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        /* ─── TIMELINE HOVER HIGHLIGHT ─── */
+        .timeline-item {
+            transition: padding-left 0.3s ease;
+            cursor: default;
+        }
+        .timeline-item:hover {
+            padding-left: 56px;
+        }
+        .timeline-item:hover .timeline-dot {
+            background: var(--rust);
+            box-shadow: 0 0 12px rgba(56,189,248,0.4);
+            transform: scale(1.4);
+        }
+        .timeline-dot {
             transition: all 0.3s ease;
         }
-        
-        .social-links a:hover {
-            color: var(--secondary-color);
+
+        /* ─── SKILL TAG ANIMATION ─── */
+        .skill-tag {
+            cursor: default;
+            position: relative;
+            overflow: hidden;
         }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .job-title {
-                flex-direction: column;
-            }
-            
-            .education-header {
-                flex-direction: column;
-            }
+        .skill-tag::after {
+            content: '';
+            position: absolute;
+            left: -100%; top: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(56,189,248,0.08), transparent);
+            transition: left 0.4s ease;
+        }
+        .skill-tag:hover::after { left: 100%; }
+
+        /* ─── STAT COUNTER ANIMATION ─── */
+        .stat-num { transition: color 0.3s ease; }
+        .stat-big:hover .stat-num { color: var(--rust); }
+
+        /* ─── SECTION REVEAL ─── */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ─── CERT ITEM GLOW ─── */
+        .cert-item:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(56,189,248,0.08);
+        }
+
+        /* ─── BACK TO TOP ─── */
+        .back-to-top {
+            position: fixed;
+            bottom: 32px; right: 32px;
+            width: 42px; height: 42px;
+            background: var(--warm-white);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold);
+            font-size: 14px;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 99;
+            text-decoration: none;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .back-to-top:hover {
+            background: var(--gold);
+            color: #0b0f14;
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        /* ─── HERO SUBTITLE FADE ─── */
+        .hero-text > * {
+            animation: fadeUp 0.7s ease both;
+        }
+        .hero-eyebrow { animation-delay: 0.1s; }
+        .hero h1 { animation-delay: 0.2s; }
+        .hero-title-line { animation-delay: 0.3s; }
+        .hero-subtitle { animation-delay: 0.4s; }
+        .hero-actions { animation-delay: 0.5s; }
+        .hero-social { animation-delay: 0.6s; }
+        .hero-stats-block { animation: fadeUp 0.7s 0.7s ease both; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Soumya Shukla</div>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <img src="./1684570806588.jpeg" alt="Avatar" style="border-radius: 50%; height: 200px;">
-                <h1>Soumya Shukla</h1>
-                <p>IT Business Analyst, Sydney, Australia</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/soumya-shukla-a59665190/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:soumya.shukla4@gmail.com" title="soumya.shukla4@gmail.com"><i class="fas fa-envelope"></i></a>
-                </div>
-                <a href="#about" class="btn">Learn More</a>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<a href="#hero" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+<!-- NAV -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#" class="nav-logo" style="font-size:18px; letter-spacing:2px; color: var(--gold);">✦</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-corner tl"></div>
+    <div class="hero-corner tr"></div>
+    <div class="hero-corner bl"></div>
+    <div class="hero-corner br"></div>
+    <div class="hero-inner">
+        <div class="hero-text">
+            <div class="hero-eyebrow">Senior Business Analyst</div>
+            <h1>Soumya Shukla</h1>
+            <div class="hero-title-line"></div>
+            <p class="hero-subtitle">7+ years delivering data-driven digital solutions across aviation, telecom, government, and insurance.</p>
+            <div class="hero-actions">
+                <a href="#experience" class="btn-primary">View Experience <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+                <a href="mailto:soumya.shukla4@gmail.com" class="btn-outline">Get in Touch</a>
+            </div>
+            <div class="hero-social">
+                <a href="https://www.linkedin.com/in/soumya-shukla-a59665190/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:soumya.shukla4@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>Professional Summary</h2>
-            <p>IT Business Analyst with over 6 years' experience across telecom, government, insurance, and aviation
-                industries. Skilled in optimizing customer experiences, collaborating with cross-functional teams, and delivering
-                data-driven insights to enhance digital solutions.</p>
+        <div class="hero-stats-block">
+            <div class="stat-big">
+                <div class="stat-num">7+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-big">
+                <div class="stat-num">4</div>
+                <div class="stat-label">Industries</div>
+            </div>
+            <div class="stat-big">
+                <div class="stat-num">8</div>
+                <div class="stat-label">Key Projects</div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2>Work Experience</h2>
-            
-            <div class="job">
-                <div class="job-title">
-                    <h3 class="job-company">Digital Business Analyst, Qantas Loyalty (Novon Consulting), Sydney</h3>
-                    <span class="job-duration">April 2023 - Present</span>
+<!-- ABOUT -->
+<section id="about" class="section about-section">
+    <div class="section-inner">
+        <div class="section-header">
+            <span class="section-label">01</span>
+            <h2 class="section-title">About</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="about-text">
+                <p>Senior Business Analyst with over 7 years of experience working across aviation, telecom, government, and insurance industries. I specialise in bridging the gap between business needs and technology — translating complex requirements into clear, actionable solutions that drive measurable outcomes.</p>
+                <p>Currently at Qantas Airways, I'm leading the build of an in-house Reward flight booking platform and improving the Manage Booking experience. My work has delivered a 15% reduction in customer support queries, a 30% cut in requirement-related defects, and a 20% improvement in booking completion rates during usability testing.</p>
+                <p>I bring deep expertise in requirements gathering, user story writing, UAT, and cross-functional collaboration with UX/UI, engineering, QE, and analytics teams. I'm passionate about using data and customer insights to build products that are intuitive, reliable, and impactful.</p>
+            </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section experience-section">
+    <div class="section-inner">
+        <div class="section-header">
+            <span class="section-label">02</span>
+            <h2 class="section-title">Experience</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-meta">
+                    <span class="timeline-company">Qantas Airways Limited</span>
+                    <span class="timeline-date">Aug 2025 — Present</span>
                 </div>
-                <p>Digital Business Analyst in Qantas Loyalty Product squad, focused on improving and optimizing customer experience for Qantas Points redemption:</p>
-                <ul>
-                    <li>Collaborated with business leads and technical teams to define strategic business goals, establish project scopes, gather requirements, and facilitate scrum ceremonies for key products and initiatives.</li>
-                    <li>For Classic Rewards Plus launch, Use Points page revamp and Qantas Top-up Points redesign, gathered and refined business and technical requirements with key stakeholders, resulting in a cumulative increase of 95% monthly traffic.</li>
-                    <li>Enhanced user experience by improving UI accessibility features, streamlining user journeys, and conducting thorough UI testing for above mentioned products.</li>
-                    <li>Developed and maintained performance dashboards using Adobe and Google Analytics, providing insights into page visits, unique visitors, click-through rates, conversion rates, and user flows across Qantas websites and mobile apps.</li>
-                    <li>Led the adoption of Generative AI tools in the team, including building a Q&A chatbot for internal resources to improve productivity.</li>
-                    <li>Mentored graduate Business Analysts to develop core BA skills and accelerate their growth within project environments.</li>
+                <div class="timeline-role">Senior Business Analyst — Sydney</div>
+                <p class="timeline-desc">Senior BA in product squad, focused on building an in-house Reward flight booking experience and improving Manage Booking experience.</p>
+                <ul class="timeline-list">
+                    <li>Improved Manage Booking user experience, leading to a 15% reduction in customer support queries by collaborating with UX/UI designers, QE teams, and product owners to streamline the booking flow.</li>
+                    <li>Gathered and validated complex business requirements for the in-house reward flight booking platform, translating them into detailed user stories and acceptance criteria — reducing requirement-related defects by 30%.</li>
+                    <li>Partnered with UI/UX designers and developers to design intuitive booking flows, resulting in a 20% improvement in booking completion rates during early usability testing.</li>
+                    <li>Supported QE teams in defining test scenarios and validating functionality, ensuring zero critical defects at launch and enabling a successful rollout ahead of schedule.</li>
+                    <li>Collaborated with Qantas Loyalty and external vendors to align platform capabilities with loyalty program requirements, ensuring seamless integration and enhancing the customer redemption experience.</li>
+                    <li>Collaborated with the analytics team to define and finalise analytics requirements for the platform.</li>
                 </ul>
             </div>
-            
-            <div class="job">
-                <div class="job-title">
-                    <h3 class="job-company">Business Analyst, Bluewater Control, Sydney</h3>
-                    <span class="job-duration">October 2022 – March 2023</span>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-meta">
+                    <span class="timeline-company">Qantas Loyalty (Novon Consulting)</span>
+                    <span class="timeline-date">Apr 2023 — Aug 2025</span>
                 </div>
-                <p>Business Analyst in product team, leading the development of the Bluewater asset and inventory management platform for telecom industry clients:</p>
-                <ul>
-                    <li>Partnered with product and tech teams for the upgrade of the asset management platform from v1 to v2, expanding the user base to 52 businesses across Asia-Pacific.</li>
-                    <li>Collaborated with sales, customer success, and UX teams to collect user feedback, understand challenges within the v1 system and usage patterns from usability standpoint.</li>
-                    <li>Brainstormed, prototyped and showcased solution designs to stakeholders in collaboration with design and engineering teams; ensured solutions meet customer's functional and non-functional requirements.</li>
-                    <li>Managed product roadmap delivery through facilitating scrum ceremonies: daily stand-up, refinements, retrospectives, and sprint reviews.</li>
-                    <li>Delivered customer presentations for new product features and releases.</li>
+                <div class="timeline-role">Digital Business Analyst — Sydney</div>
+                <p class="timeline-desc">Digital BA in the Qantas Loyalty Product squad, focused on improving and optimising customer experience for Qantas Points redemption.</p>
+                <ul class="timeline-list">
+                    <li>Collaborated with business leads and technical teams to define strategic goals, establish project scopes, and facilitate scrum ceremonies for key products.</li>
+                    <li>Led Classic Rewards Plus, Use Points revamp, and Top-up Points redesign — resulting in a cumulative 95% increase in monthly traffic.</li>
+                    <li>Enhanced UI accessibility features, streamlined user journeys, and conducted thorough UI testing.</li>
+                    <li>Developed performance dashboards via Adobe and Google Analytics covering visits, CTRs, conversions, and user flows.</li>
+                    <li>Led GenAI adoption in the team, including building a Q&A chatbot for internal resources.</li>
+                    <li>Mentored graduate Business Analysts to accelerate core BA skill development.</li>
                 </ul>
             </div>
-            
-            <div class="job">
-                <div class="job-title">
-                    <h3 class="job-company">Business Analyst, National Disability Insurance Agency, Melbourne</h3>
-                    <span class="job-duration">October 2021 – September 2022</span>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-meta">
+                    <span class="timeline-company">Bluewater Control</span>
+                    <span class="timeline-date">Oct 2022 — Mar 2023</span>
                 </div>
-                <p>Business Analyst in Provisioning, Permission, and Routing team, responsible for migrating permission sets and user groups from SAP to Salesforce CRM system for 53 teams across organization:</p>
-                <ul>
-                    <li>Led the migration of permission sets and user groups from SAP to Salesforce CRM system for 53 teams, ensuring a smooth transition and minimal disruption to operations.</li>
-                    <li>Collaborated with stakeholders and subject matter experts to identify and document business needs and processes related to the digital system migration.</li>
-                    <li>Analysed existing data and processes, identified competing demands and organizational changes, and proposed solutions to optimize the migration process.</li>
-                    <li>Evaluated the effectiveness of proposed solutions and designs, ensuring they met stakeholder requirements and aligned with organizational goals.</li>
-                    <li>Successfully implemented a workflow routing and provisioning framework for users, enabling seamless access to the new Salesforce CRM system.</li>
+                <div class="timeline-role">Business Analyst — Sydney</div>
+                <p class="timeline-desc">Led development of the Bluewater asset and inventory management platform for telecom industry clients.</p>
+                <ul class="timeline-list">
+                    <li>Partnered with product and tech teams for the v1-to-v2 platform upgrade, expanding the user base to 52 businesses across Asia-Pacific.</li>
+                    <li>Collected user feedback with sales, CS, and UX teams to identify pain points and usage patterns.</li>
+                    <li>Prototyped and showcased solution designs to stakeholders; ensured solutions met functional and non-functional requirements.</li>
+                    <li>Managed roadmap delivery through daily stand-ups, refinements, retrospectives, and sprint reviews.</li>
                 </ul>
             </div>
-            
-            <div class="job">
-                <div class="job-title">
-                    <h3 class="job-company">Assistant Project Coordinator, Project Management Institute, Melbourne</h3>
-                    <span class="job-duration">July 2021 – October 2021</span>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-meta">
+                    <span class="timeline-company">National Disability Insurance Agency</span>
+                    <span class="timeline-date">Oct 2021 — Sep 2022</span>
                 </div>
-                <p>Planned the PMDoS 2021 event with project manager, project team, steering committee, and sponsors:</p>
-                <ul>
-                    <li>Supported the maintenance of documentation throughout the duration of the initiative including but not limited to – business case, charter, project plan, lessons learnt, weekly status reports, steering committee report.</li>
-                    <li>Coordinated with the Business Analyst to work on the budget, issues, and risks of the project.</li>
+                <div class="timeline-role">Business Analyst — Melbourne</div>
+                <p class="timeline-desc">Provisioning, Permission &amp; Routing team, responsible for migrating permission sets from SAP to Salesforce CRM for 53 teams.</p>
+                <ul class="timeline-list">
+                    <li>Led migration of permission sets and user groups for 53 teams with minimal disruption to operations.</li>
+                    <li>Documented business needs and processes related to the digital system migration.</li>
+                    <li>Implemented a workflow routing and provisioning framework enabling seamless access to the new Salesforce CRM.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-meta">
+                    <span class="timeline-company">Project Management Institute</span>
+                    <span class="timeline-date">Jul 2021 — Oct 2021</span>
+                </div>
+                <div class="timeline-role">Assistant Project Coordinator — Melbourne</div>
+                <ul class="timeline-list">
+                    <li>Planned the PMDoS 2021 event with project manager, steering committee, and sponsors.</li>
+                    <li>Maintained documentation including business case, charter, project plan, and status reports.</li>
                     <li>Delivered all required outcomes on time and in line with project expectations.</li>
                 </ul>
             </div>
-            
-            <div class="job">
-                <div class="job-title">
-                    <h3 class="job-company">Scrum Master, Jet Airways, Delhi, India</h3>
-                    <span class="job-duration">June 2016 – June 2019</span>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-meta">
+                    <span class="timeline-company">Jet Airways</span>
+                    <span class="timeline-date">Jun 2016 — Jun 2019</span>
                 </div>
-                <p>Worked as Project Coordinator and Scrum Master in operations. Gained experience with SAPs/4 Hana Cloud and SAP 6.0:</p>
-                <ul>
-                    <li>Collaborated with team members to research and elicit functional and non-functional requirements and facilitate potentially shippable incremental planning sessions.</li>
-                    <li>Organized and facilitated work plans, daily-standups, reviews, retrospectives, release plans, demos and meetings.</li>
-                    <li>Collaborated with the market experts to learn appropriate strategies to increase productivity and foster innovation across the team.</li>
+                <div class="timeline-role">Scrum Master — Delhi, India</div>
+                <p class="timeline-desc">Project Coordinator and Scrum Master in operations. Gained experience with SAP S/4 Hana Cloud and SAP 6.0.</p>
+                <ul class="timeline-list">
+                    <li>Elicited functional and non-functional requirements and facilitated sprint planning sessions.</li>
+                    <li>Organised daily stand-ups, reviews, retrospectives, release plans, and demos.</li>
                     <li>Performed UAT requirement analysis, created and executed UAT scenarios.</li>
                 </ul>
             </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <!-- Project 1 -->
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="./logo1.png" alt="Project Image">
-                            </div>
-                            <h3 class="project-title">Qantas: Use Points Page Revamp</h3>
+<!-- PROJECTS -->
+<section id="projects" class="section projects-section">
+    <div class="section-inner">
+        <div class="section-header">
+            <span class="section-label">03</span>
+            <h2 class="section-title">Projects</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="projects-grid">
 
-                            <p class="project-desc">Led the modernization of Use Points page design and user experience to drive greater engagement and conversion.</p>
-                            <ul style="padding-left: 13px;">
-                                <li>Observed 95% increase in page traffic and engagement.</li>
-                                <li>Observed 18% reduction in bouce rate.</li>
-                            </ul>
-                            <div class="project-links">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="./logo1.png" alt="Project Image">
-                            </div>
-                            <h3 class="project-title">Qantas: Entertainment Hub</h3>
-                            <p class="project-desc" style="font-size: 13px;">An exclusive platform for Qantas Frequent Flyer members to redeem Qantas Points for VIP concert tickets, behind-the-scenes
-                                access, and special event packages.</p>
-                                <ul style="padding-left: 13px; font-size: 13px;">
-                                    <li>Delivered the product MVP ahead of schedule, enabling promotion of key Ticketek events.</li>
-                                    <li>80% increase in member engagement for highly sought-after experiences through
-                                        points redemption.</li>
-                                    <li>Supported continuous feature development post-launch, based on
-                                        customer feedback and data.</li>
-                                </ul>
-                            <div class="project-links">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3 -->
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="./logo1.png" alt="Project Image">
-                            </div>
-                            <h3 class="project-title">Qantas: Top-Up Points Revamp</h3>
-                            <p class="project-desc">Redesigned the Top-Up Points purchase journey to be faster, simpler, and
-                                mobile-friendly, improving user experience and driving higher engagement.</p>
-                            <ul style="padding-left: 13px;">
-                                <li>60% increase in Top-Up Points transactions.</li>
-                                <li>75% increase customer satisfaction observed through embedded surveys.</li>
-                            </ul>
-                            <div class="project-links">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 4 -->
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="./logo1.png" alt="Project Image">
-                            </div>
-                            <h3 class="project-title">Qantas: Classic Rewards Plus (CR+)</h3>
-                            <p class="project-desc">Supported the on-time launch of CR+, expanding Qantas Points redemption options for more
-                                flights and airlines.</p>
-                            <ul style="padding-left: 13px;">
-                                <li>Enhanced redemption flexibility for members.</li>
-                                <li>Resolved issues pre-launch for smooth go-live.</li>
-                            </ul>
-                            <div class="project-links">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 5 -->
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="./bluewater_control_logo.jpeg" alt="Project Image" style="margin-top: 1px;">
-                            </div>
-                            <h4 class="project-title" style="font-size: medium; margin-bottom: 3px;">Bluewater Control: Asset Management System Upgrade</h4>
-                            <p class="project-desc" style="font-size: small; margin-bottom: 5px;">V2 upgrade of Bluewater Asset Management System to improve performance, data accuracy, and user experience for telecom clients.</p>
-                            <ul style="padding-left: 12px; font-size: 12px;">
-                                <li>Improved data accuracy and reduced manual tracking.</li>
-                                <li>Increased MAU by 25% within 3 months.</li>
-                                <li>Streamlined asset reporting for faster decision-making.</li>
-                            </ul>
-                            <div class="project-links">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 6 -->
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="./ndis.png" alt="Project Image" style="margin-top: 1px;">
-                            </div>
-                            <h4 class="project-title" style="font-size: medium; margin-bottom: 3px;">NDIS: SAP to Salesforce CRM Migration</h4>
-                            <p class="project-desc" >Migrated user groups and permissions from SAP to Salesforce as part of CRM migration.</p>
-                            <ul style="padding-left: 12px;">
-                                <li>Migrated permissions for 52 teams.</li>
-                                <li>Achieved 100% access continuity.</li>
-                                <li>Improved stakeholder engagement through clear communication.</li>
-                            </ul>
-                            <div class="project-links">
-                            </div>
-                        </div>
-                    </div>
+            <div class="project-card">
+                <div class="project-logo" style="background:#1a0a0a;color:#e4002b;border:1px solid #3a1010;">Q</div>
+                <div class="project-name">Qantas: In-House Reward Flight Booking Platform</div>
+                <p class="project-desc">Led requirements gathering and delivery for building Qantas's in-house reward flight booking experience, replacing third-party dependencies.</p>
+                <div class="project-metrics">
+                    <div class="metric">30% reduction in requirement-related defects</div>
+                    <div class="metric">20% improvement in booking completion rates</div>
+                    <div class="metric">Zero critical defects at launch</div>
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Hard Skills</h3>
-                    <div class="skill-item">Agile, Waterfall Methodologies and Ceremonies</div>
-                    <div class="skill-item">Requirements Gathering and Business Process Improvement</div>
-                    <div class="skill-item">User Acceptance Testing</div>
-                    <div class="skill-item">Backlog Management</div>
-                    <div class="skill-item">Product Management and Business Presentation</div>
+            <div class="project-card">
+                <div class="project-logo" style="background:#1a0a0a;color:#e4002b;border:1px solid #3a1010;">Q</div>
+                <div class="project-name">Qantas: Manage Booking Experience Improvement</div>
+                <p class="project-desc">Collaborated with UX/UI designers, QE teams, and product owners to streamline the Manage Booking flow and reduce friction for customers.</p>
+                <div class="project-metrics">
+                    <div class="metric">15% reduction in customer support queries</div>
+                    <div class="metric">Improved booking flow usability across devices</div>
                 </div>
-                
-                <div class="skill-category">
-                    <h3>Tools</h3>
-                    <div class="skill-item">Confluence/Jira</div>
-                    <div class="skill-item">JIRA Workflow Management</div>
-                    <div class="skill-item">AWS Cloud Fundamentals</div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-logo" style="background:#1a0a0a;color:#e4002b;border:1px solid #3a1010;">Q</div>
+                <div class="project-name">Qantas: Use Points Page Revamp</div>
+                <p class="project-desc">Led the modernisation of the Use Points page to drive greater engagement and conversion through improved UX and design.</p>
+                <div class="project-metrics">
+                    <div class="metric">95% increase in monthly page traffic</div>
+                    <div class="metric">18% reduction in bounce rate</div>
                 </div>
-                
-                <div class="skill-category">
-                    <h3>Analytics</h3>
-                    <div class="skill-item">Adobe Analytics</div>
-                    <div class="skill-item">Tableau, Datadog</div>
-                    <div class="skill-item">SQL</div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-logo" style="background:#1a0a0a;color:#e4002b;border:1px solid #3a1010;">Q</div>
+                <div class="project-name">Qantas: Entertainment Hub</div>
+                <p class="project-desc">Exclusive platform for Qantas Frequent Flyer members to redeem Points for VIP concerts, behind-the-scenes access, and events.</p>
+                <div class="project-metrics">
+                    <div class="metric">MVP delivered ahead of schedule</div>
+                    <div class="metric">80% increase in member engagement</div>
                 </div>
-                
-                <div class="skill-category">
-                    <h3>Software</h3>
-                    <div class="skill-item">Salesforce, SAP</div>
-                    <div class="skill-item">MS Excel (Advanced)</div>
-                    <div class="skill-item">MS PowerPoint (Advanced)</div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-logo" style="background:#1a0a0a;color:#e4002b;border:1px solid #3a1010;">Q</div>
+                <div class="project-name">Qantas: Top-Up Points Revamp</div>
+                <p class="project-desc">Redesigned the Top-Up Points purchase journey to be faster, simpler, and mobile-friendly.</p>
+                <div class="project-metrics">
+                    <div class="metric">60% increase in Top-Up transactions</div>
+                    <div class="metric">75% rise in customer satisfaction</div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-logo" style="background:#1a0a0a;color:#e4002b;border:1px solid #3a1010;">Q</div>
+                <div class="project-name">Qantas: Classic Rewards Plus (CR+)</div>
+                <p class="project-desc">Supported the on-time launch of CR+, expanding Qantas Points redemption options for more flights and airlines.</p>
+                <div class="project-metrics">
+                    <div class="metric">Enhanced redemption flexibility for members</div>
+                    <div class="metric">Issues resolved pre-launch for smooth go-live</div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-logo" style="background:#0a1828;color:#38bdf8;border:1px solid #1e3a52;font-size:11px;">BW</div>
+                <div class="project-name">Bluewater Control: Asset Management V2</div>
+                <p class="project-desc">V2 upgrade of the Bluewater Asset Management System to improve performance, data accuracy, and UX for telecom clients.</p>
+                <div class="project-metrics">
+                    <div class="metric">25% increase in MAU within 3 months</div>
+                    <div class="metric">Streamlined asset reporting across APAC</div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-logo" style="background:#0a1a0a;color:#4ade80;border:1px solid #1a3a1a;font-size:11px;">ND</div>
+                <div class="project-name">NDIS: SAP to Salesforce CRM Migration</div>
+                <p class="project-desc">Migrated user groups and permissions from SAP to Salesforce as part of a large-scale government CRM migration.</p>
+                <div class="project-metrics">
+                    <div class="metric">52 teams migrated successfully</div>
+                    <div class="metric">100% access continuity achieved</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section skills-section">
+    <div class="section-inner">
+        <div class="section-header">
+            <span class="section-label">04</span>
+            <h2 class="section-title">Skills</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-group">
+                <h3>Methodology</h3>
+                <div class="skill-tags">
+                    <div class="skill-tag">Agile & Waterfall</div>
+                    <div class="skill-tag">Requirements Gathering</div>
+                    <div class="skill-tag">User Acceptance Testing</div>
+                    <div class="skill-tag">Backlog Management</div>
+                    <div class="skill-tag">Business Process Improvement</div>
+                    <div class="skill-tag">Product Management</div>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>Tools</h3>
+                <div class="skill-tags">
+                    <div class="skill-tag">Confluence / Jira</div>
+                    <div class="skill-tag">JIRA Workflow Mgmt</div>
+                    <div class="skill-tag">AWS Cloud Fundamentals</div>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>Analytics</h3>
+                <div class="skill-tags">
+                    <div class="skill-tag">Adobe Analytics</div>
+                    <div class="skill-tag">Google Analytics</div>
+                    <div class="skill-tag">Tableau</div>
+                    <div class="skill-tag">Datadog</div>
+                    <div class="skill-tag">SQL</div>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>Software</h3>
+                <div class="skill-tags">
+                    <div class="skill-tag">Salesforce</div>
+                    <div class="skill-tag">SAP S/4 Hana</div>
+                    <div class="skill-tag">MS Excel (Advanced)</div>
+                    <div class="skill-tag">MS PowerPoint (Advanced)</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Education Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <h2>Education</h2>
-            
-            <div class="education-item">
-                <div class="education-header">
-                    <h3 class="education-degree">Master of Information Systems (Melbourne School of Engineering Scholarship)</h3>
-                    <span class="education-date">July 2019 – June 2021</span>
-                </div>
-                <p>University of Melbourne, Australia</p>
+<!-- EDUCATION -->
+<section id="education" class="section education-section">
+    <div class="section-inner">
+        <div class="section-header">
+            <span class="section-label">05</span>
+            <h2 class="section-title">Education</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="education-grid">
+            <div class="edu-card">
+                <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="edu-degree">Master of Information Systems</div>
+                <div class="edu-school">University of Melbourne — Melbourne School of Engineering Scholarship</div>
+                <div class="edu-date">July 2019 – June 2021</div>
             </div>
-            
-            <div class="education-item">
-                <div class="education-header">
-                    <h3 class="education-degree">Bachelor of Computer Science</h3>
-                    <span class="education-date">June 2012 – June 2016</span>
-                </div>
-                <p>RGPV, Bhopal, India</p>
+            <div class="edu-card">
+                <div class="edu-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="edu-degree">Bachelor of Computer Science</div>
+                <div class="edu-school">RGPV, Bhopal, India</div>
+                <div class="edu-date">June 2012 – June 2016</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications">
-        <div class="container">
-            <h2>Certifications</h2>
-            <div class="cert-container">
-                <div class="cert-item">
-                    <i class="fab fa-aws"></i>
-                    <a href="https://www.credly.com/badges/4a941f02-cd73-468f-888b-595d6cd52446" target="_blank">AWS Certified Cloud Practitioner - Amazon Web Services</a>
-                </div>
-                <div class="cert-item">
-                    <i class="fas fa-certificate"></i>
-                    <a href="https://www.coursera.org/account/accomplishments/verify/63JPL5T55G6V" target="_blank">Digital Product Management - Coursera</a>
-                </div>
-                <div class="cert-item">
-                    <i class="fas fa-certificate"></i>
-                    <a href="https://credentials.databricks.com/4720109a-6b36-44dd-8898-52a106c1d36a#acc.LXrI8a5K" target="_blank">Generative AI Fundamentals - Databricks</a>
-                </div>
-                
-            </div>
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="section certs-section">
+    <div class="section-inner">
+        <div class="section-header">
+            <span class="section-label">06</span>
+            <h2 class="section-title">Certifications</h2>
+            <div class="section-line"></div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Soumya's Portfolio. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/soumya-shukla-a59665190/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:soumya.shukla4@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
+        <div class="cert-list">
+            <a href="https://www.credly.com/badges/4a941f02-cd73-468f-888b-595d6cd52446" target="_blank" class="cert-item">
+                <div class="cert-icon"><i class="fab fa-aws"></i></div>
+                <div class="cert-name">AWS Certified Cloud Practitioner — Amazon Web Services</div>
+                <div class="cert-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+            </a>
+            <a href="https://www.coursera.org/account/accomplishments/verify/63JPL5T55G6V" target="_blank" class="cert-item">
+                <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                <div class="cert-name">Digital Product Management — Coursera</div>
+                <div class="cert-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+            </a>
+            <a href="https://credentials.databricks.com/4720109a-6b36-44dd-8898-52a106c1d36a#acc.LXrI8a5K" target="_blank" class="cert-item">
+                <div class="cert-icon"><i class="fas fa-robot"></i></div>
+                <div class="cert-name">Generative AI Fundamentals — Databricks</div>
+                <div class="cert-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+            </a>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script>
-        // Initialize Swiper
-        var swiper = new Swiper(".mySwiper", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            breakpoints: {
-                // when window width is >= 320px
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 20
-                },
-                // when window width is >= 640px
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 30
-                },
-                // when window width is >= 992px
-                992: {
-                    slidesPerView: 3,
-                    spaceBetween: 40
-                }
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-name" style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:2px; color: var(--muted);">PORTFOLIO · 2025</div>
+        <div class="footer-contact">
+            <a href="mailto:soumya.shukla4@gmail.com">soumya.shukla4@gmail.com</a>
+            <a href="tel:0403190544">0403 190 544</a>
+            <a href="https://www.linkedin.com/in/soumya-shukla-a59665190/" target="_blank">linkedin.com/in/soumya-shukla</a>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/soumya-shukla-a59665190/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:soumya.shukla4@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="tel:0403190544"><i class="fas fa-phone"></i></a>
+        </div>
+    </div>
+    <div class="footer-copy">© 2025 · All rights reserved.</div>
+</footer>
+
+<script>
+    // ── Cursor glow
+    const glow = document.getElementById('cursorGlow');
+    document.addEventListener('mousemove', e => {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top  = e.clientY + 'px';
+    });
+
+    // ── Scroll progress bar
+    const bar = document.getElementById('scrollProgress');
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+        bar.style.width = pct + '%';
+        btt.classList.toggle('visible', window.scrollY > 400);
+    });
+
+    // ── Active nav on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+        navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+    });
+
+    // ── Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+            const t = document.querySelector(this.getAttribute('href'));
+            if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+
+    // ── Scroll reveal
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                revealObserver.unobserve(entry.target);
             }
         });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 70,
-                    behavior: 'smooth'
-                });
-            });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.timeline-item, .project-card, .edu-card, .cert-item, .skill-group, .about-text p').forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+    });
+
+    // ── Typing animation
+    const phrases = [
+        'Senior Business Analyst · Qantas Airways',
+        'Digital Business Analyst · Qantas Loyalty',
+        'Aviation · Telecom · Government · Insurance'
+    ];
+    let pi = 0, ci = 0, deleting = false;
+    const typedEl = document.getElementById('typedText');
+    function type() {
+        const phrase = phrases[pi];
+        if (!deleting) {
+            typedEl.textContent = phrase.slice(0, ++ci);
+            if (ci === phrase.length) { deleting = true; setTimeout(type, 2200); return; }
+        } else {
+            typedEl.textContent = phrase.slice(0, --ci);
+            if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+        }
+        setTimeout(type, deleting ? 28 : 55);
+    }
+    setTimeout(type, 900);
+
+    // ── Project card 3D tilt
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const r = card.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width  - 0.5;
+            const y = (e.clientY - r.top)  / r.height - 0.5;
+            card.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-4px)`;
         });
-        
-        // Add active class to navigation links on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
         });
-    </script>
-</body>
-</html>
+    });
+
+    // ── Animated stat counters
+    const statNums = document.querySelectorAll('.stat-num');
+    const statObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const raw = el.textContent.replace(/[^0-9]/g, '');
+            const suffix = el.textContent.replace(/[0-9]/g, '');
+            const target = parseInt(raw);
+            if (isNaN(target)) return;
+            let cur = 0;
+            const step = Math.ceil(t
